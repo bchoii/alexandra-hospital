@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  html {
+    @apply bg-neutral-50;
+  }
+
+  button {
+    @apply rounded border border-black bg-slate-200 px-2 hover:ring hover:ring-inset;
+  }
+
+  .active {
+    @apply ring ring-inset;
+  }
+
+  .themed {
+    background-color: #00b14f;
+    @apply overflow-clip rounded p-2 text-center font-bold text-white transition duration-300 hover:bg-green-500;
+  }
+
+  .offset-0 {
+    offset: 0;
+  }
+
+  .grid-cols {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  }
+
+  ul {
+    @apply ms-4 list-outside list-disc;
+  }
+
+  ol {
+    @apply ms-4 list-outside list-decimal;
+  }
+
+  a {
+    /* @apply text-blue-800 underline; */
+  }
+
+  /* https://stackoverflow.com/questions/7144843/extra-space-under-textarea-differs-along-browsers */
+  /* removes gap at bottom  */
+  textarea {
+    vertical-align: top;
+  }
+
+  .stacked {
+    display: grid;
+
+    > * {
+      grid-area: 1 / 1;
+    }
+  }
+}

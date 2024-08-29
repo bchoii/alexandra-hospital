@@ -1,0 +1,239 @@
+form {
+  /* display: contents; */
+}
+
+.border {
+  border-color: #888;
+}
+
+.hiddenscrollbars::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hiddenscrollbars {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.error {
+  color: red;
+}
+
+.fadein {
+  animation: fadein 300ms;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    translate: 0 20px;
+  }
+}
+
+.nowrap {
+  text-wrap: nowrap;
+  /* white-space: nowrap; */
+}
+
+table td {
+  vertical-align: baseline;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+  /* overflow-wrap: break-word; */
+  /* word-wrap: break-word; */
+  /* word-wrap is none standard
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_text/Wrapping_breaking_text
+  */
+
+  /* word-break: break-word; */
+  /* word-break: break-word; is deprecated
+  https://stackoverflow.com/questions/17259916/difference-between-overflow-wrap-and-word-break
+  https://drafts.csswg.org/css-text-3/#valdef-word-break-break-word */
+}
+
+table {
+  border-spacing: 0;
+  border: 1px solid #ccc;
+}
+
+table th {
+  font-size: 0.7rem;
+  color: #888;
+  text-transform: uppercase;
+}
+
+table th,
+table td {
+  padding: 5px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+table {
+  counter-reset: rowNumber;
+}
+
+table tr > td:first-child {
+  counter-increment: rowNumber;
+  text-wrap: nowrap;
+}
+
+@media (width < 640px) {
+  table {
+    width: 100%;
+  }
+  th {
+    display: none;
+  }
+  td {
+    display: block;
+  }
+}
+
+table tr td:first-child::before {
+  content: counter(rowNumber) ". ";
+}
+
+input,
+textarea,
+select {
+  border: 1px solid black;
+  padding-inline: 1rem;
+  padding-block: 0.4rem;
+  min-width: 0px;
+}
+
+dialog {
+  padding: 20px;
+  border: 1px solid black;
+}
+
+label {
+  text-wrap: nowrap;
+  /* margin-inline: 10px; */
+  /* white-space: nowrap; */
+  min-width: fit-content;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1em;
+  /* border-bottom: 1px solid #333; */
+}
+
+pre,
+.pre {
+  /* background-color: #eee; */
+  /* border: 1px solid black; */
+  white-space: pre-wrap;
+  word-break: break-all;
+
+  /* max-height: 600px; */
+  /* overflow-y: scroll; */
+  scrollbar-width: thin;
+
+  /* font-size: xx-small; */
+  text-align: start;
+  hyphens: auto;
+}
+
+.formgrid > * {
+  display: grid;
+}
+
+.formgrid > * > * {
+  white-space: pre-wrap;
+}
+
+.formgrid > * > *:first-child {
+  word-break: break-word;
+}
+
+.formgrid > * > *:not(:first-child) {
+  word-break: break-all;
+}
+
+.formgrid > * > * {
+  width: auto;
+}
+
+.formgrid > * > *:first-child {
+  font-size: 0.8rem;
+  /* font-weight: bold; */
+}
+
+@media (width > 640px) {
+  .formgrid {
+    display: grid;
+    align-content: start;
+    /* grid-template-columns: repeat(auto-fill, 8rem minmax(0, max(0px, 24rem))); */
+    /* grid-template-columns: repeat(auto-fill, minmax(0, max(0px, 24rem))); */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  }
+
+  .formgrid > * {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    /* grid-template-columns: subgrid; */
+    /* grid-column: span 2; */
+  }
+
+  .formgrid > .wide {
+    grid-column: 1 / -1;
+  }
+
+  .equal-rows {
+    grid-auto-rows: 1fr;
+  }
+
+  .formgrid > * {
+    align-items: baseline;
+  }
+
+  .formgrid > * > *:first-child {
+    padding-inline: 10px;
+    text-align: end;
+    border-right: 1px dashed #888;
+    margin-inline-end: 10px;
+  }
+}
+
+.grid-cols {
+  display: grid;
+  grid-auto-columns: minmax(0, auto);
+  grid-auto-flow: column;
+
+  align-items: start;
+}
+
+.fade {
+  opacity: 0.5;
+}
+
+summary {
+  cursor: pointer;
+  padding-block-start: 20px;
+}
+
+details > summary {
+  list-style: none;
+}
+
+/* Latest Chrome, Edge, Firefox */
+details > summary::marker {
+  display: none;
+}
+
+.flexgroup {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flexgroup > * {
+  flex: 1;
+  min-width: fit-content;
+}

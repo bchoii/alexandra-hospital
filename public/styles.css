@@ -1,0 +1,55 @@
+html {
+  /* scrollbar-width: thin; */
+  /* scroll-behavior: smooth; */
+
+  min-height: 100%;
+  min-height: -webkit-fill-available;
+  display: grid;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  opacity: 0.3;
+
+  background: aliceblue;
+  background-image: url("https://www.nuhs.edu.sg/images/nuhslibraries/item-listing/education/event-1.jpg");
+
+  background-size: cover;
+  background-position: bottom;
+
+  position: fixed;
+  inset: 0;
+  min-height: 100lvh;
+  z-index: -10;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+/* css reset */
+
+html {
+  /* color-scheme: dark light; */
+}
+
+* {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
